@@ -294,52 +294,6 @@ export default function AboutClient({ content, stats, values, team }: AboutClien
                     </motion.div>
                 </div>
             </section>
-
-            {/* Promise / CTA Section */}
-            <section className="py-20 bg-muted/50 border-t border-border">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <motion.div
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        variants={fadeInUp}
-                    >
-                        <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-full mb-6">
-                            <Gift className="w-6 h-6 text-primary" />
-                        </div>
-
-                        <h2 className="font-cormorant text-4xl md:text-5xl font-bold text-foreground mb-6">
-                            Our Promise to You
-                        </h2>
-
-                        <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
-                            Every arrangement is crafted with care, every delivery made with
-                            precision, and every customer treated like family. Experience the
-                            Misk Blooming difference today.
-                        </p>
-
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                            <Link href="/products" className="w-full sm:w-auto">
-                                <Button
-                                    size="lg"
-                                    className="w-full sm:w-auto font-semibold px-8 py-6 text-lg bg-primary text-primary-foreground hover:bg-primary/90"
-                                >
-                                    Shop Collections
-                                </Button>
-                            </Link>
-                            <Link href="/contact" className="w-full sm:w-auto">
-                                <Button
-                                    variant="outline"
-                                    size="lg"
-                                    className="w-full sm:w-auto font-semibold px-8 py-6 text-lg border-primary text-primary hover:bg-primary/5"
-                                >
-                                    Contact Us
-                                </Button>
-                            </Link>
-                        </div>
-                    </motion.div>
-                </div>
-            </section>
         </main>
     );
 }
