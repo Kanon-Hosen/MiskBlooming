@@ -4,7 +4,12 @@ import LegalPageLayout from "@/src/components/LegalPageLayout";
 import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const settings = await prisma.storeSettings.findFirst();
+  let settings = null;
+  try {
+    settings = await prisma.storeSettings.findFirst();
+  } catch (error) {
+    console.error("Error fetching settings for terms metadata:", error);
+  }
   return {
     title: `Terms & Conditions | ${settings?.storeName || 'Misk Blooming'}`,
     description: "Terms of Service outlining rules, responsibilities, and acceptable usage of our website.",
@@ -12,7 +17,12 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function TermsPage() {
-  const settings = await prisma.storeSettings.findFirst();
+  let settings = null;
+  try {
+    settings = await prisma.storeSettings.findFirst();
+  } catch (error) {
+    console.error("Error fetching settings for terms page:", error);
+  }
 
   return (
     <LegalPageLayout

@@ -4,7 +4,12 @@ import LegalPageLayout from "@/src/components/LegalPageLayout";
 import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const settings = await prisma.storeSettings.findFirst();
+  let settings = null;
+  try {
+    settings = await prisma.storeSettings.findFirst();
+  } catch (error) {
+    console.error("Error fetching settings for cookies metadata:", error);
+  }
   return {
     title: `Cookie Policy | ${settings?.storeName || 'Misk Blooming'}`,
     description: "Learn how we use cookies and similar tracking technologies on our website.",
@@ -12,7 +17,12 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function CookiePolicyPage() {
-  const settings = await prisma.storeSettings.findFirst();
+  let settings = null;
+  try {
+    settings = await prisma.storeSettings.findFirst();
+  } catch (error) {
+    console.error("Error fetching settings for cookies page:", error);
+  }
 
   return (
     <LegalPageLayout

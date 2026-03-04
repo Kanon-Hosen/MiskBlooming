@@ -39,7 +39,12 @@ const playfair = Playfair_Display({
 });
 
 export async function generateMetadata(): Promise<Metadata> {
-  const settings = await prisma.storeSettings.findFirst();
+  let settings = null;
+  try {
+    settings = await prisma.storeSettings.findFirst();
+  } catch (error) {
+    console.error("Error fetching store settings for metadata:", error);
+  }
 
   // Strict "No Demo Data" policy:
   // If settings exist, use them.

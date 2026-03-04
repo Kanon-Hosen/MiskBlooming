@@ -4,7 +4,12 @@ import LegalPageLayout from "@/src/components/LegalPageLayout";
 import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const settings = await prisma.storeSettings.findFirst();
+  let settings = null;
+  try {
+    settings = await prisma.storeSettings.findFirst();
+  } catch (error) {
+    console.error("Error fetching settings for delivery metadata:", error);
+  }
   return {
     title: `Shipping & Delivery | ${settings?.storeName || 'Misk Blooming'}`,
     description: "Shipping and delivery information for our products.",
@@ -12,7 +17,12 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function DeliveryInfoPage() {
-  const settings = await prisma.storeSettings.findFirst();
+  let settings = null;
+  try {
+    settings = await prisma.storeSettings.findFirst();
+  } catch (error) {
+    console.error("Error fetching settings for delivery page:", error);
+  }
 
   return (
     <LegalPageLayout

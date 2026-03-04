@@ -4,7 +4,12 @@ import LegalPageLayout from "@/src/components/LegalPageLayout";
 import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const settings = await prisma.storeSettings.findFirst();
+  let settings = null;
+  try {
+    settings = await prisma.storeSettings.findFirst();
+  } catch (error) {
+    console.error("Error fetching settings for privacy metadata:", error);
+  }
   return {
     title: `Privacy Policy | ${settings?.storeName || 'Misk Blooming'}`,
     description: "Privacy policy detailing how we collect, use, and protect user data.",
@@ -12,7 +17,12 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function PrivacyPolicyPage() {
-  const settings = await prisma.storeSettings.findFirst();
+  let settings = null;
+  try {
+    settings = await prisma.storeSettings.findFirst();
+  } catch (error) {
+    console.error("Error fetching settings for privacy page:", error);
+  }
 
   return (
     <LegalPageLayout

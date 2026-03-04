@@ -17,10 +17,17 @@ const defaultFooterData = {
 };
 
 const Footer = async () => {
-  const [content, storeSettings] = await Promise.all([
-    prisma.footerContent.findFirst({ where: { id: "FOOTER" } }),
-    prisma.storeSettings.findFirst()
-  ]);
+  let content = null;
+  let storeSettings = null;
+
+  try {
+    [content, storeSettings] = await Promise.all([
+      prisma.footerContent.findFirst({ where: { id: "FOOTER" } }),
+      prisma.storeSettings.findFirst()
+    ]);
+  } catch (error) {
+    console.error("Error fetching footer data:", error);
+  }
 
   const footerData = content ? {
     brandDesc: content.brandDesc,
