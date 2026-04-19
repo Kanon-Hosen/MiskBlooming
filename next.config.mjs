@@ -28,12 +28,15 @@ const nextConfig = {
 
   experimental: {
     optimizeCss: true,
+    outputFileTracingIncludes: {
+      '/api/dashboard-report': ['./public/fonts/**/*'],
+    },
     turbo: {
       rules: {
         "*.svg": ["@svgr/webpack"], //  Optimize inline SVGs
       },
     },
-    // serverExternalPackages: ["pdfkit"],
+    serverExternalPackages: ["pdfkit", "argon2"],
     optimizePackageImports: [
       "lucide-react",
       "react-icons",
