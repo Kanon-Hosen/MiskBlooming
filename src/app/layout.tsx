@@ -6,6 +6,8 @@ import { QueryProvider } from "../providers/QueryProvider";
 import { Toaster } from "sonner";
 import { prisma } from "../lib/db";
 
+export const dynamic = "force-dynamic";
+
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
