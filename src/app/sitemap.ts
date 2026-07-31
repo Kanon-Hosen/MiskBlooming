@@ -1,10 +1,5 @@
 import { MetadataRoute } from "next";
-import { GET_PRODUCTS_SITEMAP } from "../modules/product/operations";
-import {
-  GET_CATEGORIES_SITEMAP,
-  Category,
-} from "../modules/category/categoryTypes";
-import { yogaFetch } from "../lib/graphql-client";
+import { prisma } from "../lib/db";
 
 export const revalidate = 3600; // 1 hour
 
@@ -13,11 +8,6 @@ const safeDate = (date?: string | Date | null) => {
   const d = new Date(date);
   return isNaN(d.getTime()) ? new Date().toISOString() : d.toISOString();
 };
-
-interface SitemapProduct {
-  slug: string;
-  updatedAt?: string | null;
-}
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const BASE_URL =
@@ -37,20 +27,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
 
   try {
-    const [{ data: productsData }, { data: categoriesData }] =
-      (await Promise.all([
-        yogaFetch(GET_PRODUCTS_SITEMAP).catch((err) => {
-          console.error("Failed to fetch products for sitemap", err);
-          return { data: { products: [] } };
-        }),
-        yogaFetch(GET_CATEGORIES_SITEMAP).catch((err) => {
-          console.error("Failed to fetch categories for sitemap", err);
-          return { data: { categories: [] } };
-        }),
-      ])) as [
-        { data?: { products?: SitemapProduct[] } },
-        { data?: { categories?: Category[] } }
-      ];
+    const [products, categories] = await Promise.all([
+      prisma.product.findMany({
+        where: { status: "active" },
+        select: { slug: true, updatedAt: true },
+      }).catch((err) => {
+        console.error("Failed to query products for sitemap", err);
+        return [];
+      }),
+      prisma.category.findMany({
+        select: { name: true, updatedAt: true },
+      }).catch((err) => {
+        console.error("Failed to query categories for sitemap", err);
+        return [];
+      }),
+    ]);
 
     const routes: MetadataRoute.Sitemap = staticRoutes.map((route) => ({
       url: `${BASE_URL}${route.url}`,
@@ -59,7 +50,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: route.priority,
     }));
 
-    categoriesData?.categories?.forEach((c: Category) => {
+    categories.forEach((c) => {
       if (!c?.name) return;
       routes.push({
         url: `${BASE_URL}/categories/${encodeURIComponent(c.name)}`,
@@ -69,7 +60,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       });
     });
 
-    productsData?.products?.forEach((p: SitemapProduct) => {
+    products.forEach((p) => {
       if (!p?.slug) return;
       routes.push({
         url: `${BASE_URL}/products/${encodeURIComponent(p.slug)}`,

@@ -8,8 +8,13 @@ const nextConfig = {
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
   reactStrictMode: true,
+  outputFileTracingIncludes: {
+    '/api/dashboard-report': ['./public/fonts/**/*'],
+  },
+  serverExternalPackages: ["pdfkit", "argon2"],
 
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
@@ -28,15 +33,11 @@ const nextConfig = {
 
   experimental: {
     optimizeCss: true,
-    outputFileTracingIncludes: {
-      '/api/dashboard-report': ['./public/fonts/**/*'],
-    },
     turbo: {
       rules: {
         "*.svg": ["@svgr/webpack"], //  Optimize inline SVGs
       },
     },
-    serverExternalPackages: ["pdfkit", "argon2"],
     optimizePackageImports: [
       "lucide-react",
       "react-icons",

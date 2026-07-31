@@ -12,6 +12,8 @@ import TestimonialSection from "../../components/home/TestimonialSection";
 import FeaturedProducts from "../../components/home/FeaturedProducts";
 import Newsletter from "@/src/components/home/Newsletter";
 
+export const dynamic = "force-dynamic";
+
 // --- Loader ---
 const SectionLoader = ({ height = "h-96" }: { height?: string }) => (
   <div
