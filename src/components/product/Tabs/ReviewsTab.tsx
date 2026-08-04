@@ -52,7 +52,7 @@ export default function ReviewsTab({
       className="max-w-4xl mx-auto"
     >
       {/* 1. Summary Section */}
-      <div className="bg-primary-foreground border border-border rounded-2xl p-6 md:p-10 mb-12">
+      <div className="bg-card border border-border rounded-2xl p-6 md:p-10 mb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Left: Big Score */}
           <div className="text-center md:text-left md:border-r border-border md:pr-10">
@@ -91,7 +91,7 @@ export default function ReviewsTab({
                   {star}
                 </span>
                 <Star className="w-3 h-3 text-muted-foreground" />
-                <div className="flex-1 h-2 bg-foreground rounded-full overflow-hidden">
+                <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
                     whileInView={{ width: `${percentage}%` }}
@@ -128,7 +128,7 @@ export default function ReviewsTab({
                 >
                   {/* Avatar / Initials */}
                   <div className="shrink-0">
-                    <div className="w-12 h-12 rounded-full bg-primary-foreground text-foreground flex items-center justify-center text-lg font-cormorant font-bold uppercase">
+                    <div className="w-12 h-12 rounded-full bg-muted text-foreground flex items-center justify-center text-lg font-cormorant font-bold uppercase">
                       {review.user?.firstName?.charAt(0) || (
                         <User className="w-5 h-5" />
                       )}
@@ -172,7 +172,7 @@ export default function ReviewsTab({
               ))}
             </div>
           ) : (
-            <div className="text-center py-12 bg-foreground rounded-xl border border-dashed border-border">
+            <div className="text-center py-12 bg-card rounded-xl border border-dashed border-border">
               <Star className="w-10 h-10 text-foreground mx-auto mb-3 opacity-50" />
               <p className="text-muted-foreground font-medium">
                 No reviews yet. Be the first to share your experience.
@@ -191,7 +191,7 @@ export default function ReviewsTab({
             {user ? (
               <form
                 onSubmit={handleSubmit}
-                className="bg-primary-foreground p-6 rounded-xl shadow-sm border border-border space-y-6"
+                className="bg-card p-6 rounded-xl shadow-sm border border-border space-y-6"
               >
                 {/* Rating Input */}
                 <div>
@@ -242,7 +242,7 @@ export default function ReviewsTab({
                     value={comment}
                     onChange={(e) => setComment(e.target.value)}
                     rows={5}
-                    className="w-full bg-primary-foreground border border-border rounded-lg p-4 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-all resize-none"
+                    className="w-full bg-background border border-border rounded-lg p-4 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-all resize-none"
                     placeholder="Tell us what you liked or what we can improve..."
                   />
                 </div>
@@ -257,7 +257,7 @@ export default function ReviewsTab({
                 </Button>
               </form>
             ) : (
-              <div className="bg-charcoal-900 text-center p-8 rounded-xl shadow-lg relative overflow-hidden group">
+              <div className="bg-card text-center p-8 rounded-xl shadow-lg border border-border relative overflow-hidden group">
                 {/* Decorative background element */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -mr-16 -mt-16 transition-all group-hover:bg-primary/20"></div>
 
@@ -272,7 +272,7 @@ export default function ReviewsTab({
                 <Link href={`/auth/login?callbackUrl=${product.slug}`}>
                   <Button
                     variant="outline"
-                    className="w-full border-border text-foreground hover:bg-primary-foreground hover:text-foreground"
+                    className="w-full border-border text-foreground hover:bg-accent hover:text-accent-foreground"
                   >
                     Login to Write
                   </Button>
@@ -281,7 +281,7 @@ export default function ReviewsTab({
             )}
 
             {/* Side Note */}
-            <div className="mt-8 bg-primary-foreground p-5 rounded-lg border border-border">
+            <div className="mt-8 bg-card p-5 rounded-lg border border-border">
               <h4 className="font-semibold text-sm text-foreground mb-3 uppercase tracking-wider">
                 Why Review?
               </h4>

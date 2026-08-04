@@ -88,25 +88,25 @@ export function PaymentStep({
                 <label
                   key={method.id}
                   className={`flex items-center p-4 border-2 rounded-xl cursor-pointer transition-all duration-300 ${paymentMethod === method.id
-                    ? "border-border bg-primary "
-                    : "border-border  hover:bg-primary hover:border-border"
+                    ? "border-primary bg-primary/10"
+                    : "border-border hover:bg-accent"
                     }`}
                 >
                   <input
                     type="radio"
                     value={method.id}
                     {...register("paymentMethod")}
-                    className="mr-3 text-primary  focus:ring-ring"
+                    className="mr-3 text-primary focus:ring-ring"
                     onChange={() => setValue("paymentMethod", method.id as any)}
                   />
                   <method.icon className="w-6 h-6 text-foreground mr-3" />
                   <div className="flex-1">
                     <div className="flex items-center">
-                      <span className="font-medium text-foreground  text-xs sm:text-base">
+                      <span className="font-medium text-foreground text-xs sm:text-base">
                         {method.name}
                       </span>
                       {method.popular && (
-                        <span className="ml-2 px-2 py-1 sm:relative absolute top-1 right-1 bg-luxury-100 text-luxury-700 text-xs rounded-full">
+                        <span className="ml-2 px-2 py-1 sm:relative absolute top-1 right-1 bg-primary/20 text-primary text-xs rounded-full font-medium">
                           Popular
                         </span>
                       )}
@@ -116,7 +116,7 @@ export function PaymentStep({
                         </span>
                       )}
                     </div>
-                    <div className="text-sm text-foreground">
+                    <div className="text-sm text-muted-foreground">
                       {method.description}
                     </div>
                   </div>
@@ -132,12 +132,12 @@ export function PaymentStep({
 
         {/* Payment Method Info */}
         {paymentMethod === "COD" && (
-          <div className="p-4 bg-primary-foreground border border-amber-200 rounded-xl">
+          <div className="p-4 bg-card border border-amber-300 dark:border-amber-800 rounded-xl">
             <div className="flex items-center mb-2">
-              <Banknote className="w-5 h-5 text-primary mr-2" />
-              <span className="font-medium text-primary">Cash on Delivery</span>
+              <Banknote className="w-5 h-5 text-amber-600 dark:text-amber-400 mr-2" />
+              <span className="font-medium text-foreground">Cash on Delivery</span>
             </div>
-            <p className="text-sm text-primary">
+            <p className="text-sm text-muted-foreground">
               Pay with cash when your flowers are delivered. A service fee of
               AED {codFee} applies. Please have the exact amount ready for our
               delivery partner.
@@ -146,12 +146,12 @@ export function PaymentStep({
         )}
 
         {paymentMethod === "STRIPE" && (
-          <div className="p-4 bg-primary-foreground border border-border rounded-xl">
+          <div className="p-4 bg-card border border-border rounded-xl">
             <div className="flex items-center mb-2">
               <Wallet className="w-5 h-5 text-primary mr-2" />
-              <span className="font-medium text-primary">Digital Wallet</span>
+              <span className="font-medium text-foreground">Digital Wallet</span>
             </div>
-            <p className="text-sm text-primary">
+            <p className="text-sm text-muted-foreground">
               You'll be redirected to complete payment with your preferred
               digital wallet. Secure and convenient payment in one tap.
             </p>
@@ -159,12 +159,12 @@ export function PaymentStep({
         )}
 
         {/* Security Features */}
-        <div className="bg-primary-foreground border border-border rounded-xl p-4">
+        <div className="bg-card border border-border rounded-xl p-4">
           <div className="flex items-center mb-2">
             <Shield className="w-5 h-5 text-green-600 mr-2" />
-            <span className="font-medium text-green-800">Secure Payment</span>
+            <span className="font-medium text-foreground">Secure Payment</span>
           </div>
-          <p className="text-sm text-green-700">
+          <p className="text-sm text-muted-foreground">
             Your payment information is encrypted and secure. We never store
             your card details. All transactions are processed through secure
             payment gateways.

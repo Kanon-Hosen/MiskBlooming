@@ -78,6 +78,16 @@
   h6 {
     @apply font-cormorant;
   }
+
+  input,
+  textarea,
+  select {
+    @apply bg-background text-foreground border-border placeholder:text-muted-foreground;
+  }
+
+  option {
+    @apply bg-background text-foreground;
+  }
 }
 
 /* Components Layer */

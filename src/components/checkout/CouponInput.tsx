@@ -135,7 +135,7 @@ export function CouponInput() {
 
       {couponDiscount > 0 && (
         <motion.div
-          className="mt-3 p-2 bg-foregroundrounded-lg"
+          className="mt-3 p-2 bg-muted rounded-lg"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2, delay: 0.1 }}

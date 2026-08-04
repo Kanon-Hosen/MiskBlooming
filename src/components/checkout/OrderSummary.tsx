@@ -175,7 +175,7 @@ export function OrderSummary({
       </div>
 
       {/* Satisfaction Guarantee */}
-      <div className="mt-4 p-3 bg-foregroundrounded-lg">
+      <div className="mt-4 p-3 bg-muted rounded-lg">
         <div className="flex items-center">
           <CheckCircle className="w-5 h-5 text-primary mr-2" />
           <span className="text-sm font-medium text-luxury-800">

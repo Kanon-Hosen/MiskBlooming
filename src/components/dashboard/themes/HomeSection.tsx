@@ -169,7 +169,7 @@ export default function HomeSection() {
         type="single"
         collapsible
         defaultValue="home" // Open by default for better UX
-        className="w-full bg-primary-foreground rounded-lg shadow-sm border border-primary/10 overflow-hidden"
+        className="w-full bg-card rounded-lg shadow-sm border border-border overflow-hidden"
       >
         <AccordionItem value="home" className="border-b-0">
           <AccordionHeader className="flex">
@@ -361,7 +361,7 @@ export default function HomeSection() {
               </ContentSection>
 
               {/* Action Area */}
-              <div className="sticky bottom-0 bg-primary-foreground/95 backdrop-blur py-4 border-t border-primary/10 flex justify-end z-10">
+              <div className="sticky bottom-0 bg-card/95 backdrop-blur py-4 border-t border-border flex justify-end z-10">
                 <Button
                   variant="luxury"
                   type="submit"

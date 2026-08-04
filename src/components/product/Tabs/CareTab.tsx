@@ -27,14 +27,14 @@ export default function CareTab({ product }: CareTabProps) {
             </h4>
             <ul className="space-y-3">
               <li className="flex items-start">
-                <span className="w-2 h-2 bg-foreground 0 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
                 <span className="text-muted-foreground">
                   {product.careInstructions}
                 </span>
               </li>
             </ul>
           </div>
-          <div className="bg-foregroundrounded-xl p-6">
+          <div className="bg-muted rounded-xl p-6">
             <h4 className="font-semibold text-foreground  mb-4">Pro Tips</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>• Use lukewarm water for best results</li>

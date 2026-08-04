@@ -317,10 +317,10 @@ export default function CartPage() {
                 </div>
 
                 {/* Estimated Delivery */}
-                <div className="mt-4 p-4 bg-foregroundrounded-lg">
+                <div className="mt-4 p-4 bg-muted rounded-lg">
                   <div className="flex items-center mb-2">
                     <Truck className="w-4 h-4 text-primary mr-2" />
-                    <span className="font-medium text-foreground  text-sm">
+                    <span className="font-medium text-foreground text-sm">
                       Estimated Delivery
                     </span>
                   </div>

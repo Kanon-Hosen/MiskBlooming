@@ -89,7 +89,7 @@ export default function PromotionBanner({ promotions = [] }: { promotions?: any[
 
                             {/* Floating Content Card */}
                             <motion.div
-                                className="z-10 absolute bottom-[-40px] lg:bottom-auto lg:right-0 w-[90%] lg:w-[45%] bg-primary-foreground/70 backdrop-blur-3xl p-10 lg:p-16 rounded-[2rem] lg:rounded-[2.5rem] shadow-[0_50px_100px_-30px_rgba(0,0,0,0.15)] border border-white/40 ring-1 ring-luxury-500/10"
+                                className="z-10 absolute bottom-[-40px] lg:bottom-auto lg:right-0 w-[90%] lg:w-[45%] bg-card/90 backdrop-blur-3xl p-10 lg:p-16 rounded-[2rem] lg:rounded-[2.5rem] shadow-[0_50px_100px_-30px_rgba(0,0,0,0.15)] border border-border ring-1 ring-luxury-500/10"
                                 variants={{
                                     initial: { opacity: 0, y: 50, rotateX: -10 },
                                     animate: { opacity: 1, y: 0, rotateX: 0 },
@@ -132,8 +132,8 @@ export default function PromotionBanner({ promotions = [] }: { promotions?: any[
 
                                     <div className="flex flex-col gap-2">
                                         <p className="text-xs font-bold uppercase tracking-[0.2em] text-luxury-500">Access Code</p>
-                                        <div className="inline-flex items-center self-start px-6 py-3 bg-luxury-50 rounded-xl border border-luxury-200/50 shadow-inner">
-                                            <span className="font-playfair text-2xl font-bold text-luxury-800 tracking-widest">{currentPromo.promoCode}</span>
+                                        <div className="inline-flex items-center self-start px-6 py-3 bg-muted rounded-xl border border-border shadow-inner">
+                                            <span className="font-playfair text-2xl font-bold text-foreground tracking-widest">{currentPromo.promoCode}</span>
                                         </div>
                                     </div>
                                 </motion.div>
