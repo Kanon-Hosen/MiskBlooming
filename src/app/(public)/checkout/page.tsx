@@ -98,7 +98,7 @@ export default function CheckoutPage() {
         />
 
         {/* Guest Checkout Notice */}
-        <div className="mb-6 p-4 bg-primary-foreground border border-border rounded-lg">
+        <div className="mb-6 p-4 bg-card border border-border rounded-lg shadow-sm">
           <div className="flex items-center">
             <svg
               className="h-5 w-5 text-primary flex-shrink-0"
@@ -112,10 +112,10 @@ export default function CheckoutPage() {
               />
             </svg>
             <div className="ml-3">
-              <h3 className="text-sm font-medium text-primary">
+              <h3 className="text-sm font-semibold text-foreground">
                 Quick Checkout - No Account Required
               </h3>
-              <div className="mt-2 text-sm text-primary">
+              <div className="mt-1 text-sm text-muted-foreground">
                 <p>
                   You can complete your purchase without creating an account.
                   You'll receive order updates via email and can track your

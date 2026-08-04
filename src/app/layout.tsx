@@ -54,8 +54,11 @@ export async function generateMetadata(): Promise<Metadata> {
   const title = settings?.storeName || "";
   const description = settings?.description || "";
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ||
-    (process.env.APP_URL ? process.env.APP_URL : "https://demo.app");
+  const baseUrl =
+    process.env.NEXT_PUBLIC_URL ||
+    process.env.NEXT_PUBLIC_BASE_URL ||
+    process.env.APP_URL ||
+    "https://misk-blooming.vercel.app";
 
   return {
     metadataBase: new URL(baseUrl),

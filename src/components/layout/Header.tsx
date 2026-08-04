@@ -287,7 +287,7 @@ const Header = () => {
                   <DropdownMenuItem asChild>
                     <Link
                       href="/dashboard"
-                      className="flex group items-center gap-3 px-3 py-2.5 text-sm text-foreground hover:text-primary hover:bg-foreground rounded-lg transition-colors duration-150 cursor-pointer"
+                      className="flex group items-center gap-3 px-3 py-2.5 text-sm text-foreground hover:text-primary hover:bg-accent rounded-lg transition-colors duration-150 cursor-pointer"
                     >
                       <LayoutDashboard className="w-4 h-4 text-foreground group-hover:text-primary" />
                       <span>Dashboard</span>
@@ -296,7 +296,7 @@ const Header = () => {
                   <DropdownMenuItem asChild>
                     <Link
                       href="/dashboard/account/settings"
-                      className="flex group items-center gap-3 px-3 py-2.5 text-sm text-foreground hover:text-primary hover:bg-foreground rounded-lg transition-colors duration-150 cursor-pointer"
+                      className="flex group items-center gap-3 px-3 py-2.5 text-sm text-foreground hover:text-primary hover:bg-accent rounded-lg transition-colors duration-150 cursor-pointer"
                     >
                       <ShieldCheck className="w-4 h-4 text-foreground group-hover:text-primary" />
                       <span>Manage Admin</span>
@@ -305,7 +305,7 @@ const Header = () => {
                   <DropdownMenuItem asChild>
                     <Link
                       href="/dashboard/users"
-                      className="flex group items-center gap-3 px-3 py-2.5 text-sm text-foreground hover:text-primary hover:bg-foreground rounded-lg transition-colors duration-150 cursor-pointer"
+                      className="flex group items-center gap-3 px-3 py-2.5 text-sm text-foreground hover:text-primary hover:bg-accent rounded-lg transition-colors duration-150 cursor-pointer"
                     >
                       <Users className="w-4 h-4 text-foreground group-hover:text-primary" />
                       <span>Users</span>
@@ -314,7 +314,7 @@ const Header = () => {
                   <DropdownMenuItem asChild>
                     <Link
                       href="/dashboard/payments"
-                      className="flex group items-center gap-3 px-3 py-2.5 text-sm text-foreground hover:text-primary hover:bg-foreground rounded-lg transition-colors duration-150 cursor-pointer"
+                      className="flex group items-center gap-3 px-3 py-2.5 text-sm text-foreground hover:text-primary hover:bg-accent rounded-lg transition-colors duration-150 cursor-pointer"
                     >
                       <CreditCard className="w-4 h-4 text-foreground group-hover:text-primary" />
                       <span>Payments</span>
@@ -326,7 +326,7 @@ const Header = () => {
                   <DropdownMenuItem asChild>
                     <Link
                       href="/account/orders"
-                      className="flex group items-center gap-3 px-3 py-2.5 text-sm text-foreground hover:text-primary hover:bg-foreground rounded-lg transition-colors duration-150 cursor-pointer"
+                      className="flex group items-center gap-3 px-3 py-2.5 text-sm text-foreground hover:text-primary hover:bg-accent rounded-lg transition-colors duration-150 cursor-pointer"
                     >
                       <ShoppingCart className="w-4 h-4 text-foreground group-hover:text-primary" />
                       <span>My Orders</span>
@@ -335,7 +335,7 @@ const Header = () => {
                   <DropdownMenuItem asChild>
                     <Link
                       href="/account/settings"
-                      className="flex group items-center gap-3 px-3 py-2.5 text-sm text-foreground hover:text-primary hover:bg-foreground rounded-lg transition-colors duration-150 cursor-pointer"
+                      className="flex group items-center gap-3 px-3 py-2.5 text-sm text-foreground hover:text-primary hover:bg-accent rounded-lg transition-colors duration-150 cursor-pointer"
                     >
                       <Settings className="w-4 h-4 text-foreground group-hover:text-primary" />
                       <span>Account Settings</span>
@@ -344,7 +344,7 @@ const Header = () => {
                 </div>
               )}
 
-              <DropdownMenuSeparator className="my-1 bg-foreground" />
+              <DropdownMenuSeparator className="my-1 bg-border" />
 
               <div className="py-1">
                 <DropdownMenuItem
@@ -584,7 +584,7 @@ const Header = () => {
                             <DropdownMenuItem asChild>
                               <Link
                                 href="/account/orders"
-                                className="flex group items-center gap-3 px-3 py-2 text-sm text-foreground hover:bg-foreground hover:text-primary rounded-lg transition-colors duration-150 cursor-pointer"
+                                className="flex group items-center gap-3 px-3 py-2 text-sm text-foreground hover:bg-accent hover:text-primary rounded-lg transition-colors duration-150 cursor-pointer"
                               >
                                 <ShoppingCart className="w-4 group-hover:text-primary h-4 text-foreground" />
                                 <span>My Orders</span>
@@ -593,7 +593,7 @@ const Header = () => {
                             <DropdownMenuItem asChild>
                               <Link
                                 href="/account/settings"
-                                className="flex group items-center gap-3 px-3 py-2 text-sm text-foreground hover:bg-foreground hover:text-primary rounded-lg transition-colors duration-150 cursor-pointer"
+                                className="flex group items-center gap-3 px-3 py-2 text-sm text-foreground hover:bg-accent hover:text-primary rounded-lg transition-colors duration-150 cursor-pointer"
                               >
                                 <Settings className="w-4 group-hover:text-primary h-4 text-foreground" />
                                 <span>Settings</span>
@@ -602,7 +602,7 @@ const Header = () => {
                           </div>
                         )}
 
-                        <DropdownMenuSeparator className="my-1 bg-foreground" />
+                        <DropdownMenuSeparator className="my-1 bg-border" />
 
                         <div className="py-1">
                           <DropdownMenuItem
@@ -627,7 +627,7 @@ const Header = () => {
                         <DropdownMenuItem asChild>
                           <Link
                             href="/auth/register"
-                            className="flex items-center justify-center px-3 py-2 mt-1 text-sm font-medium text-secondary border border-border hover:bg-foreground rounded-lg transition-colors duration-150 cursor-pointer"
+                            className="flex items-center justify-center px-3 py-2 mt-1 text-sm font-medium text-foreground border border-border hover:bg-accent rounded-lg transition-colors duration-150 cursor-pointer"
                           >
                             Create Account
                           </Link>
@@ -689,7 +689,7 @@ const Header = () => {
                       <Link
                         key={dropdownItem.name}
                         href={dropdownItem.href}
-                        className="block w-60 p-3 rounded-lg hover:bg-foreground hover:text-primary transition-colors group"
+                        className="block w-60 p-3 rounded-lg hover:bg-accent hover:text-primary transition-colors group"
                       >
                         <div className="font-medium text-foreground group-hover:text-primary ">
                           {dropdownItem.name}

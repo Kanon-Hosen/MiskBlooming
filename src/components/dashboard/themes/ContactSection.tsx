@@ -96,7 +96,7 @@ export default function ContactSection() {
     <Accordion
       type="single"
       collapsible
-      className="w-full bg-primary-foreground rounded-lg shadow-sm border border-primary/10 overflow-hidden"
+      className="w-full bg-card rounded-lg shadow-sm border border-border overflow-hidden"
     >
       <AccordionItem value="contact" className="border-b-0">
         <AccordionHeader className="flex">
@@ -190,7 +190,7 @@ export default function ContactSection() {
               </div>
             </ContentSection>
 
-            <div className="sticky bottom-0 bg-primary-foreground/95 backdrop-blur py-4 border-t border-primary/10 flex justify-end z-10">
+            <div className="sticky bottom-0 bg-card/95 backdrop-blur py-4 border-t border-border flex justify-end z-10">
               <Button
                 variant="luxury"
                 type="submit"

@@ -19,12 +19,12 @@ function PricingTab({ formData, handleInputChange, errors }: TabProps) {
         <div>
           <label
             htmlFor="price"
-            className="block text-sm font-medium text-gray-700 mb-2"
+            className="block text-sm font-medium text-foreground mb-2"
           >
             Regular Price (AED) *
           </label>
           <div className="relative">
-            <DollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+            <DollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
             <Input
               id="price"
               type="number"
@@ -49,12 +49,12 @@ function PricingTab({ formData, handleInputChange, errors }: TabProps) {
         <div>
           <label
             htmlFor="compareAtPrice"
-            className="block text-sm font-medium text-gray-700 mb-2"
+            className="block text-sm font-medium text-foreground mb-2"
           >
             Compare at Price (AED)
           </label>
           <div className="relative">
-            <DollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+            <DollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
             <Input
               id="compareAtPrice"
               type="number"
@@ -76,7 +76,7 @@ function PricingTab({ formData, handleInputChange, errors }: TabProps) {
           {errors?.compareAtPrice && (
             <p className="text-red-500 text-sm mt-1">{errors.compareAtPrice}</p>
           )}
-          <p className="text-xs text-foreground mt-1">
+          <p className="text-xs text-muted-foreground mt-1">
             Original price for showing discounts
           </p>
         </div>
@@ -84,12 +84,12 @@ function PricingTab({ formData, handleInputChange, errors }: TabProps) {
         <div>
           <label
             htmlFor="costPerItem"
-            className="block text-sm font-medium text-gray-700 mb-2"
+            className="block text-sm font-medium text-foreground mb-2"
           >
             Cost per Item (AED)
           </label>
           <div className="relative">
-            <DollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+            <DollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
             <Input
               id="costPerItem"
               type="number"
@@ -106,7 +106,7 @@ function PricingTab({ formData, handleInputChange, errors }: TabProps) {
               className="pl-10"
             />
           </div>
-          <p className="text-xs text-foreground mt-1">
+          <p className="text-xs text-muted-foreground mt-1">
             Your cost for profit calculations
           </p>
         </div>
@@ -114,12 +114,12 @@ function PricingTab({ formData, handleInputChange, errors }: TabProps) {
 
       {/* Pricing Summary */}
       {formData.price > 0 && (
-        <div className="bg-foregroundborder border-border  rounded-lg p-4">
-          <h3 className="font-medium text-luxury-900 mb-3">Pricing Summary</h3>
+        <div className="bg-card border border-border rounded-lg p-4">
+          <h3 className="font-medium text-foreground mb-3">Pricing Summary</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
             <div>
-              <span className="text-foreground ">Regular Price:</span>
-              <p className="font-medium text-luxury-900">
+              <span className="text-muted-foreground">Regular Price:</span>
+              <p className="font-medium text-foreground">
                 AED {formData.price.toFixed(2)}
               </p>
             </div>

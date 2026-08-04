@@ -150,7 +150,7 @@ export default function CollectionPage() {
         type="single"
         collapsible
         defaultValue="collection"
-        className="w-full bg-primary-foreground rounded-lg shadow-sm border border-primary/10 overflow-hidden"
+        className="w-full bg-card rounded-lg shadow-sm border border-border overflow-hidden"
       >
         <AccordionItem value="collection" className="border-b-0">
           <AccordionTrigger>
@@ -253,8 +253,8 @@ export default function CollectionPage() {
 function PageSkeleton() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-6 animate-pulse">
-      <div className="h-8 w-48 bg-foreground rounded" />
-      <div className="w-full h-64 bg-foreground rounded-lg border border-border" />
+      <div className="h-8 w-48 bg-muted rounded" />
+      <div className="w-full h-64 bg-muted rounded-lg border border-border" />
     </div>
   );
 }

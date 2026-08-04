@@ -79,7 +79,7 @@ function BasicInfoTab({
             id="category"
             value={formData.category}
             onChange={(e) => handleInputChange("category", e.target.value)}
-            className={`w-full px-3 py-2 border bg-primary-foreground rounded-md focus:ring-2 focus:ring-primary focus:border-transparent ${
+            className={`w-full px-3 py-2 border bg-background text-foreground rounded-md focus:ring-2 focus:ring-primary focus:border-transparent ${
               errors?.category ? "border-destructive" : "border-border"
             }`}
           >
@@ -107,7 +107,7 @@ function BasicInfoTab({
               id="subcategory"
               value={formData.subcategory}
               onChange={(e) => handleInputChange("subcategory", e.target.value)}
-              className="w-full px-3 py-2 border border-border rounded-md focus:ring-2 focus:ring-primary bg-primary-foreground focus:border-transparent"
+              className="w-full px-3 py-2 border border-border rounded-md focus:ring-2 focus:ring-primary bg-background text-foreground focus:border-transparent"
             >
               <option value="">Select a subcategory</option>
               {Array.isArray(selectedCategory?.subcategories) &&
@@ -147,7 +147,7 @@ function BasicInfoTab({
             placeholder="Brief description for product listings (max 160 characters)"
             rows={3}
             maxLength={160}
-            className={`w-full px-3 py-2 border bg-primary-foreground rounded-md focus:ring-2 focus:ring-primary focus:border-transparent ${
+            className={`w-full px-3 py-2 border bg-background text-foreground rounded-md focus:ring-2 focus:ring-primary focus:border-transparent ${
               errors?.shortDescription ? "border-destructive" : "border-border"
             }`}
           />
@@ -191,7 +191,7 @@ function BasicInfoTab({
           {formData.tags.map((tag) => (
             <span
               key={tag}
-              className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-primary-foreground text-primary"
+              className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-muted text-foreground"
             >
               <Tag className="w-3 h-3 mr-1" />
               {tag}
@@ -230,7 +230,7 @@ function BasicInfoTab({
           <select
             value={formData.status}
             onChange={(e) => handleInputChange("status", e.target.value)}
-            className="w-full px-3 py-2 bg-primary-foreground border border-border rounded-md focus:ring-2 focus:ring-ring focus:border-transparent"
+            className="w-full px-3 py-2 bg-background text-foreground border border-border rounded-md focus:ring-2 focus:ring-ring focus:border-transparent"
           >
             <option value="draft">Draft</option>
             <option value="active">Active</option>
